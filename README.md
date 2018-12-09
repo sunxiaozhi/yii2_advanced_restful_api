@@ -14,9 +14,7 @@ api/views 文件夹
 api/web/css 文件夹
 ```
 
-#### 配置初始化环境
-
-切换到项目根目录，配置初始化环境
+#### 切换到项目根目录，配置初始化环境
 
 environments/dev文件夹下，复制一份backend文件夹，修改为api
 
@@ -24,9 +22,7 @@ environments/prod文件夹下，复制一份backend文件夹，修改为api
 
 #### 在environments/index.php中，添加需要初始化的api文件夹路径
 
-#### 自动测试初始化配置
-
-#### 在codeception.yml中添加初始化配置:
+#### 自动测试初始化配置，在codeception.yml中添加初始化配置:
 ```
 # global codeception file to run tests from all apps
 include:
