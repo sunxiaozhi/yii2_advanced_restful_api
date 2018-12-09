@@ -40,6 +40,20 @@ settings:
     colors: true
 ```
 
+### 执行 php init 初始化框架
+
+### 在common\config\main-local.php中配置数据库，在执行 php yii migrate
+
+创建goods数据表
+```
+CREATE TABLE `goods` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `name` varchar(255) NOT NULL DEFAULT '' COMMENT '商品名称',
+  `price` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '商品价格',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+```
+
 ### 配置api\config\main.php
 ```
 'urlManager' => [

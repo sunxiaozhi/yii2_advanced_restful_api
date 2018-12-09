@@ -7,8 +7,9 @@ use Yii;
 /**
  * This is the model class for table "goods".
  *
- * @property int $id
- * @property string $name
+ * @property string $id id
+ * @property string $name 商品名称
+ * @property string $price 商品价格
  */
 class Goods extends \yii\db\ActiveRecord
 {
@@ -26,7 +27,8 @@ class Goods extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'string', 'max' => 100],
+            [['price'], 'number'],
+            [['name'], 'string', 'max' => 255],
         ];
     }
 
@@ -38,6 +40,7 @@ class Goods extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'price' => 'Price',
         ];
     }
 }
