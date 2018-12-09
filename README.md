@@ -1,4 +1,4 @@
-## 实现yii2高级版本的restful_api
+## yii2高级版本的restful_api
 
 #### 复制backend为api
 
