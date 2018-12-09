@@ -46,7 +46,7 @@ settings:
 
 #### 在common\config\main-local.php中配置数据库，再执行 php yii migrate
 
-####创建goods数据表
+#### 创建goods数据表
 ```
 CREATE TABLE `goods` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
