@@ -26,7 +26,7 @@ environments/prod文件夹下，复制一份backend文件夹，修改为api
 
 ### 自动测试初始化配置
 
-在codeception.yml中添加初始化配置:
+### 在codeception.yml中添加初始化配置:
 ```
 # global codeception file to run tests from all apps
 include:
@@ -42,9 +42,11 @@ settings:
 
 ### 执行 php init 初始化框架
 
-### 在common\config\main-local.php中配置数据库，在执行 php yii migrate
+***
 
-创建goods数据表
+### 在common\config\main-local.php中配置数据库，再执行 php yii migrate
+
+###创建goods数据表
 ```
 CREATE TABLE `goods` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
