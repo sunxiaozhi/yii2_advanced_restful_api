@@ -19,6 +19,9 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-api',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',  //接受json格式的数据
+            ]
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -43,8 +46,8 @@ return [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
             'enableStrictParsing' => true,
+            'showScriptName' => false,
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',

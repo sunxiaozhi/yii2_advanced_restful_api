@@ -62,7 +62,7 @@ CREATE TABLE `goods` (
 ],
 ```
 
-#### 应用入口同级增加.htaccess文件
+#### 如果是Apache服务器，应用入口同级增加.htaccess文件
 ```
 Options +FollowSymLinks
 IndexIgnore */*
@@ -78,6 +78,13 @@ RewriteRule . index.php
 
 RewriteRule \.svn\/  /404.html
 RewriteRule \.git\/  /404.html
+```
+
+#### 如果是Nginx服务器，修改nginx/conf/nginx.conf，在当前"server{}"的"location / {}"中添加下面红色标记内容：
+```
+location / {
+　　try_files $uri $uri/ /index.php$is_args$args;
+}
 ```
 
 #### 配置api\config\main.php
