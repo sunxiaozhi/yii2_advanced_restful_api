@@ -1,0 +1,11 @@
+<view class='list'>
+  <text bindtap='getData'>获取数据</text>
+</view>
+<view class='list'>
+  <text bindtap='createData'>创建数据</text>
+</view>
+<view class="container data-list">
+  <block wx:for="{{datas}}" wx:for-item="data">
+    <text class="data-item">{{index + 1}}. 名称：{{data.name}}，价格：{{data.price}}</text>
+  </block>
+</view>
