@@ -32,7 +32,7 @@ Page({
         price: 109.55,
       },
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       method: 'POST',
       success(res) {
