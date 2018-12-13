@@ -27,6 +27,9 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-api', 'httpOnly' => true],
+
+            'enableSession' => false, //设置yii\web\User::enableSession属性为false（因为RESTful APIs为无状态的，当yii\web\User::enableSession为false，请求中的用户认证状态就不能通过session来保持）
+            'loginUrl' => null,  //设置yii\web\User::loginUrl属性为null（显示一个HTTP 403 错误而不是跳转到登录界面）
         ],
         'session' => [
             // this is the name of the session cookie used for login on the api
@@ -51,7 +54,8 @@ return [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => ['v1/goods']
+                    'controller' => ['v1/goods'],
+                    //'pluralize' => true  //自动复数化控制器
                 ],
             ]
         ],
