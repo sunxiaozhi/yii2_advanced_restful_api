@@ -13,6 +13,11 @@ class GoodsController extends ActiveController
 {
     public $modelClass = 'api\models\Goods';
 
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'items',
+    ];
+
     public function behaviors()
     {
         /*$behaviors = parent::behaviors();
@@ -43,7 +48,7 @@ class GoodsController extends ActiveController
 
         return $behaviors;*/
 
-        return ArrayHelper::merge(parent::behaviors(),[
+        return ArrayHelper::merge(parent::behaviors(), [
             //速率限制
             'rateLimiter' => [
                 'enableRateLimitHeaders' => true,

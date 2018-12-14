@@ -12,7 +12,8 @@ Page({
     wx.request({
       url: 'http://api.test.com/v1/goods',
       data: {
-        'access-token': '123'
+        'access-token': '123',
+        'page':1
       },
       header: {
         'content-type': 'application/json' // 默认值
