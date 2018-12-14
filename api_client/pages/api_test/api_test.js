@@ -11,6 +11,9 @@ Page({
     var that = this//不要漏了这句，很重要
     wx.request({
       url: 'http://api.test.com/v1/goods',
+      data: {
+        'access-token': '123'
+      },
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -26,10 +29,10 @@ Page({
 
   createData: function () {
     wx.request({
-      url: 'http://api.test.com/v1/goods',
+      url: 'http://api.test.com/v1/goods?access-token=123',
       data: {
-        name: '鼠标',
-        price: 109.55,
+        'name': '鼠标',
+        'price': 109.55,
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
