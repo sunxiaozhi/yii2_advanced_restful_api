@@ -13,16 +13,16 @@ Page({
       url: 'http://api.test.com/v1/goods',
       data: {
         'access-token': '123',
-        'page':1
+        'page':2
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       method: 'GET',
       success(res) {
-        console.log(res.data);
+        console.log(res.data.items);
         that.setData({
-          datas: res.data
+          datas: res.data.items
         })
       }
     })

@@ -2,12 +2,15 @@
 
 namespace api\modules\v1\controllers;
 
+use api\models\Goods;
 use yii\rest\ActiveController;
 use yii\web\Response;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\QueryParamAuth;
 use yii\filters\RateLimiter;
 use yii\helpers\ArrayHelper;
+use yii\data\ActiveDataProvider;
+use yii\data\Pagination;
 
 class GoodsController extends ActiveController
 {
@@ -74,6 +77,25 @@ class GoodsController extends ActiveController
                     'text/html' => Response::FORMAT_JSON
                 ]
             ]
+        ]);
+    }
+
+    public function actions()
+    {
+        $actions = parent::actions();
+
+        unset($actions['index']);
+
+        return $actions;
+    }
+
+    //重写 $actions['index']
+    public function actionIndex()
+    {
+        return new ActiveDataProvider([
+            'query' => Goods::find(),
+            // 设置分页，比如每页5个条目
+            'pagination' => new Pagination(['pageSize' => 5])
         ]);
     }
 }
