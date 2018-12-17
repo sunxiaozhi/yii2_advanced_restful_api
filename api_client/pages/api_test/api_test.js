@@ -20,7 +20,7 @@ Page({
       },
       method: 'GET',
       success(res) {
-        console.log(res.data.items);
+        console.log(res);
         that.setData({
           datas: res.data.items
         })
@@ -40,7 +40,7 @@ Page({
       },
       method: 'POST',
       success(res) {
-        console.log(res.data)
+        console.log(res)
       }
     })
   },

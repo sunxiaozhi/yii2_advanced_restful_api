@@ -23,6 +23,20 @@ return [
                 'application/json' => 'yii\web\JsonParser',  //接受json格式的数据
             ]
         ],
+        //统一响应客户端的格式标准
+        'response' => [
+            'class' => 'yii\web\Response',
+            'on beforeSend' => function ($event) {
+                /* @var $response yii\web\Response */
+                $response = $event->sender;
+                $response->data = [
+                    'code' => $response->getStatusCode(),
+                    'message' => $response->statusText,
+                    'data' => $response->data,
+                ];
+                $response->format = yii\web\Response::FORMAT_JSON;
+            },
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
