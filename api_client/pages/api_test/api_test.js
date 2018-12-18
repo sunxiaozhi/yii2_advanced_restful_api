@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    datas: []
+    goods: []
   },
 
   getData: function() {
@@ -20,9 +20,9 @@ Page({
       },
       method: 'GET',
       success(res) {
-        console.log(res);
+        console.log(res.data.data);
         that.setData({
-          datas: res.data.items
+          goods: res.data.data.items
         })
       }
     })

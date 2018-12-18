@@ -4,8 +4,8 @@
 <view class='list'>
   <text bindtap='createData'>创建数据</text>
 </view>
-<view class="container data-list">
-  <block wx:for="{{datas}}" wx:for-item="data">
-    <text class="data-item">{{index + 1}}. 名称：{{data.name}}，价格：{{data.price}}</text>
+<view class="container good-list">
+  <block wx:for="{{goods}}" wx:for-item="good">
+    <text class="good-item">{{index + 1}}. 名称：{{good.name}}，价格：{{good.price}}</text>
   </block>
 </view>
